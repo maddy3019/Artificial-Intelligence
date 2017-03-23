@@ -1,0 +1,26 @@
+pacman.py
+[W]pacman.py --layout testMaze --pacman GoWestAgent
+pacman.py --layout tinyMaze --pacman GoWestAgent
+pacman.py -h
+[W]pacman.py -l tinyMaze -p SearchAgent -a fn=tinyMazeSearch
+[W]pacman.py -l tinyMaze -p SearchAgent
+[W]pacman.py -l mediumMaze -p SearchAgent
+[W]pacman.py -l bigMaze -z .5 -p SearchAgent
+[W]pacman.py -l mediumMaze -p SearchAgent -a fn=bfs
+eightpuzzle.py
+[W]pacman.py -l bigMaze -p SearchAgent -a fn=bfs -z .5
+[W]pacman.py -l mediumMaze -p SearchAgent -a fn=ucs
+[W]pacman.py -l mediumDottedMaze -p StayEastSearchAgent
+[W]pacman.py -l mediumScaryMaze -p StayWestSearchAgent
+[W]pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar
+[W]pacman.py -l bigMaze -z .5 -p SearchAgent -a heuristic=manhattanHeuristic
+[W]pacman.py -l tinyCorners -p SearchAgent -a fn=bfs,prob=CornersProblem		--252 search nodes
+[W]pacman.py -l mediumCorners -p SearchAgent -a fn=bfs,prob=CornersProblem		--1966 search nodes
+[W]pacman.py -l mediumCorners -p AStarCornersAgent -z 0.5						--714 search nodes|20-25 seconds
+
+[W]pacman.py -l testSearch -p AStarFoodSearchAgent								--12 search nodes with cost=7
+[W]pacman.py -l trickySearch -p AStarFoodSearchAgent							--1938 search nodes|90-120 seconds
+[W]pacman.py -l trickySearch -p SearchAgent -a fn=ucs,prob=FoodSearchProblem,heuristic=foodHeuristic
+																				--16688 nodes|40-45 seconds
+[W]pacman.py -l bigSearch -p ClosestDotSearchAgent -z .5 
+pacman.py -l bigSearch -p ApproximateSearchAgent -z .5 -q 
